@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const cors = require('cors'); // Import cors
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -19,6 +20,11 @@ main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
 }
+
+// Enable CORS for the specified frontend website
+app.use(cors({
+  origin: 'https://library-website-frontend-ze8h.onrender.com'
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
