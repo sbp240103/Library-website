@@ -23,7 +23,7 @@ async function main() {
 
 // Enable CORS for the specified frontend website
 app.use(cors({
-  origin: 'https://library-website-frontend-ze8h.onrender.com'
+  origin: 'https://lib1-2v9g.onrender.com/'
 }));
 
 // view engine setup
